@@ -16,48 +16,73 @@
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        /* ===== Diasa Foundation Brand Palette ===== */
+        :root {
+            --brand-hero-1: #4A1D7A;
+            --brand-hero-2: #773CBD;
+            --brand-cta-1: #6C30B0;
+            --brand-cta-2: #8F54D3;
+            --brand-deep-1: #270D44;
+            --brand-deep-2: #4A1D7A;
+            --brand-soft-1: #F1EAF7;
+            --brand-soft-2: #FBF9FD;
+            --brand-heading-1: #3D1369;
+            --brand-heading-2: #642C9E;
+        }
+        .bg-brand-hero { background: linear-gradient(135deg, var(--brand-hero-1), var(--brand-hero-2)); }
+        .bg-brand-cta { background: linear-gradient(135deg, var(--brand-cta-1), var(--brand-cta-2)); }
+        .bg-brand-deep { background: linear-gradient(135deg, var(--brand-deep-1), var(--brand-deep-2)); }
+        .bg-brand-soft { background: linear-gradient(180deg, var(--brand-soft-1), var(--brand-soft-2)); }
+        .text-brand-heading {
+            background: linear-gradient(90deg, var(--brand-heading-1), var(--brand-heading-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hover\:bg-brand-cta-hover:hover { background: linear-gradient(135deg, #5c2898, #7a44ba); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-[#FBF9FD] text-[#2A123F] antialiased">
 
 <div id="app" class="min-h-screen flex flex-col relative">
 
     <!-- ROLE SWITCHER FLOATER (For Prototype Testing) -->
-    <div class="fixed top-20 right-4 z-50 bg-white/90 backdrop-blur-md shadow-xl border border-slate-200 rounded-xl p-3 text-xs max-w-xs transition-all duration-300">
-        <div class="font-bold text-slate-700 mb-2 flex items-center gap-1">
-            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-emerald-600"></i>
+    <div class="fixed top-20 right-4 z-50 bg-white/90 backdrop-blur-md shadow-xl border border-purple-100 rounded-xl p-3 text-xs max-w-xs transition-all duration-300">
+        <div class="font-bold text-[#3D1369] mb-2 flex items-center gap-1">
+            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-[#773CBD]"></i>
             Prototype Role Switcher
         </div>
-        <div class="flex gap-1 bg-slate-100 p-1 rounded-lg">
-            <button @click="currentRole = 'public'" :class="currentRole === 'public' ? 'bg-white text-emerald-700 shadow-sm' : 'text-slate-500'" class="px-2 py-1 rounded md font-medium flex-1 transition-all">Public</button>
-            <button @click="currentRole = 'user'" :class="currentRole === 'user' ? 'bg-white text-emerald-700 shadow-sm' : 'text-slate-500'" class="px-2 py-1 rounded md font-medium flex-1 transition-all">User</button>
-            <button @click="currentRole = 'admin'" :class="currentRole === 'admin' ? 'bg-white text-emerald-700 shadow-sm' : 'text-slate-500'" class="px-2 py-1 rounded md font-medium flex-1 transition-all">Admin</button>
+        <div class="flex gap-1 bg-[#F1EAF7] p-1 rounded-lg">
+            <button @click="currentRole = 'public'" :class="currentRole === 'public' ? 'bg-white text-[#642C9E] shadow-sm' : 'text-slate-500'" class="px-2 py-1 rounded md font-medium flex-1 transition-all">Public</button>
+            <button @click="currentRole = 'user'" :class="currentRole === 'user' ? 'bg-white text-[#642C9E] shadow-sm' : 'text-slate-500'" class="px-2 py-1 rounded md font-medium flex-1 transition-all">User</button>
+            <button @click="currentRole = 'admin'" :class="currentRole === 'admin' ? 'bg-white text-[#642C9E] shadow-sm' : 'text-slate-500'" class="px-2 py-1 rounded md font-medium flex-1 transition-all">Admin</button>
         </div>
         <p class="text-[10px] text-slate-400 mt-1.5 text-center">Simulates structural dashboard views below</p>
     </div>
 
     <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-100 z-40">
+    <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-purple-100 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <div class="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">D</div>
-                <span class="text-xl font-bold tracking-tight text-slate-900">Diasa<span class="text-emerald-600">Foundation</span></span>
+                <div class="w-9 h-9 bg-brand-hero rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">D</div>
+                <span class="text-xl font-bold tracking-tight text-[#2A123F]">Diasa<span class="text-brand-heading">Foundation</span></span>
             </div>
             
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#causes" class="hover:text-emerald-600 transition">Our Causes</a>
-                <a href="#impact-tool" class="hover:text-emerald-600 transition">Impact Calculator</a>
-                <a href="#transparency" class="hover:text-emerald-600 transition">Transparency</a>
-                <a href="#stories" class="hover:text-emerald-600 transition">Stories</a>
-                <a href="#volunteer" class="hover:text-emerald-600 transition">Volunteer</a>
+                <a href="#causes" class="hover:text-[#642C9E] transition">Our Causes</a>
+                <a href="#impact-tool" class="hover:text-[#642C9E] transition">Impact Calculator</a>
+                <a href="#transparency" class="hover:text-[#642C9E] transition">Transparency</a>
+                <a href="#stories" class="hover:text-[#642C9E] transition">Stories</a>
+                <a href="#volunteer" class="hover:text-[#642C9E] transition">Volunteer</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <span class="hidden sm:inline-flex items-center gap-1.5 text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-medium capitalize">
+                <span class="hidden sm:inline-flex items-center gap-1.5 text-xs bg-[#F1EAF7] text-[#4A1D7A] px-2.5 py-1 rounded-full font-medium capitalize">
                     <span class="w-1.5 h-1.5 rounded-full" :class="currentRole === 'admin' ? 'bg-red-500' : (currentRole === 'user' ? 'bg-blue-500' : 'bg-slate-400')"></span>
                     {{ currentRole }} View
                 </span>
-                <a href="#causes" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-sm transition">Donate Now</a>
+                <a href="#causes" class="bg-brand-cta hover:bg-brand-cta-hover text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-sm transition">Donate Now</a>
             </div>
         </div>
     </header>
@@ -65,43 +90,43 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-grow">
 
-        <!-- 1. HERO SECTION (Ref: Alone - Home Salado) -->
-        <section class="relative bg-gradient-to-b from-slate-50 to-white pt-20 pb-24 overflow-hidden">
+        <!-- 1. HERO SECTION -->
+        <section class="relative bg-brand-soft pt-20 pb-24 overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-100">
-                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span>
+                        <span class="inline-flex items-center gap-1.5 bg-[#F1EAF7] text-[#4A1D7A] text-xs font-semibold px-3 py-1.5 rounded-full border border-purple-100">
+                            <span class="w-1.5 h-1.5 bg-[#8F54D3] rounded-full animate-ping"></span>
                             Direct Advocacy & Accountable Relief
                         </span>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-none">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#2A123F] tracking-tight leading-none">
                             Empowering Communities. <br>
-                            <span class="text-emerald-600 relative inline-block mt-1">
+                            <span class="text-brand-heading relative inline-block mt-1">
                                 {{ impactStats[currentStatIndex].label }}
-                                <span class="absolute bottom-1 left-0 w-full h-2 bg-emerald-100 -z-10"></span>
+                                <span class="absolute bottom-1 left-0 w-full h-2 bg-[#F1EAF7] -z-10"></span>
                             </span>
                         </h1>
                         <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
                             Diasa Foundation channels 95% of direct funding right into verified global field operations. No red tape, no hidden channels—just real structural human impact.
                         </p>
                         <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                            <a href="#causes" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-xl shadow-md transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                            <a href="#causes" class="bg-brand-cta hover:bg-brand-cta-hover text-white font-medium px-6 py-3 rounded-xl shadow-md transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
                                 Donate Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
-                            <a href="#transparency" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-medium px-6 py-3 rounded-xl shadow-sm transition-all flex items-center gap-2">
+                            <a href="#transparency" class="bg-white hover:bg-[#F1EAF7] text-[#4A1D7A] border border-purple-200 font-medium px-6 py-3 rounded-xl shadow-sm transition-all flex items-center gap-2">
                                 Learn More
                             </a>
                         </div>
                     </div>
                     <div class="lg:col-span-5 relative flex justify-center">
-                        <div class="relative w-80 h-80 sm:w-96 sm:h-96 rounded-3xl bg-slate-100 border border-slate-200 shadow-inner flex items-center justify-center p-8 overflow-hidden">
-                            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#059669_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                        <div class="relative w-80 h-80 sm:w-96 sm:h-96 rounded-3xl bg-[#F1EAF7] border border-purple-100 shadow-inner flex items-center justify-center p-8 overflow-hidden">
+                            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#642C9E_1px,transparent_1px)] [background-size:16px_16px]"></div>
                             <!-- Rotating Stat Circle Card -->
-                            <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 text-center space-y-3 z-10 transition-all duration-500 transform hover:scale-105">
-                                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mx-auto">
+                            <div class="bg-white p-8 rounded-2xl shadow-xl border border-purple-100 text-center space-y-3 z-10 transition-all duration-500 transform hover:scale-105">
+                                <div class="w-12 h-12 bg-[#F1EAF7] text-[#6C30B0] rounded-xl flex items-center justify-center mx-auto">
                                     <i :data-lucide="impactStats[currentStatIndex].icon" class="w-6 h-6"></i>
                                 </div>
-                                <div class="text-4xl font-extrabold text-slate-900 tracking-tight transition-all">
+                                <div class="text-4xl font-extrabold text-[#2A123F] tracking-tight transition-all">
                                     {{ impactStats[currentStatIndex].value }}
                                 </div>
                                 <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">Current Impact Record</div>
@@ -114,31 +139,31 @@
         </section>
 
         <!-- ROLE-BASED CONDITIONAL DASHBOARD BLOCK -->
-        <section v-if="currentRole !== 'public'" class="bg-slate-100 border-y border-slate-200 py-12 transition-all">
+        <section v-if="currentRole !== 'public'" class="bg-[#F1EAF7] border-y border-purple-100 py-12 transition-all">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- User View Dashboard Component -->
-                <div v-if="currentRole === 'user'" class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div v-if="currentRole === 'user'" class="bg-white p-6 rounded-2xl shadow-sm border border-purple-100">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                         <div>
-                            <h3 class="text-lg font-bold text-slate-900">Welcome Back, Supporter</h3>
+                            <h3 class="text-lg font-bold text-[#2A123F]">Welcome Back, Supporter</h3>
                             <p class="text-xs text-slate-500">Overview of your lifetime micro-contributions and monitoring queues.</p>
                         </div>
                         <span class="text-xs font-medium bg-blue-50 text-blue-700 px-3 py-1 rounded-full border border-blue-200">Personal Supporter Board</span>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <div class="bg-[#FBF9FD] p-4 rounded-xl border border-purple-100">
                             <div class="text-xs text-slate-400 font-medium">Total Gifted Funds</div>
-                            <div class="text-2xl font-bold text-slate-800 mt-1">$450.00</div>
-                            <div class="text-[11px] text-emerald-600 mt-1 flex items-center gap-0.5"><i data-lucide="check-circle" class="w-3 h-3"></i> 3 Campaigns Backed</div>
+                            <div class="text-2xl font-bold text-[#2A123F] mt-1">$450.00</div>
+                            <div class="text-[11px] text-[#6C30B0] mt-1 flex items-center gap-0.5"><i data-lucide="check-circle" class="w-3 h-3"></i> 3 Campaigns Backed</div>
                         </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <div class="bg-[#FBF9FD] p-4 rounded-xl border border-purple-100">
                             <div class="text-xs text-slate-400 font-medium">Saved / Active Monitored Causes</div>
-                            <div class="text-2xl font-bold text-slate-800 mt-1">2</div>
+                            <div class="text-2xl font-bold text-[#2A123F] mt-1">2</div>
                             <div class="text-[11px] text-slate-500 mt-1">Recieving automated updates weekly</div>
                         </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <div class="bg-[#FBF9FD] p-4 rounded-xl border border-purple-100">
                             <div class="text-xs text-slate-400 font-medium">Tax Exemption Certs</div>
-                            <button class="mt-2 text-xs text-emerald-600 font-semibold flex items-center gap-1 hover:underline">
+                            <button class="mt-2 text-xs text-[#6C30B0] font-semibold flex items-center gap-1 hover:underline">
                                 <i data-lucide="download" class="w-3 h-3"></i> Download FY2025_Receipt.pdf
                             </button>
                         </div>
@@ -146,41 +171,41 @@
                 </div>
 
                 <!-- Admin View Dashboard Component -->
-                <div v-if="currentRole === 'admin'" class="bg-slate-900 text-white p-6 rounded-2xl shadow-xl">
+                <div v-if="currentRole === 'admin'" class="bg-brand-deep text-white p-6 rounded-2xl shadow-xl">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                         <div>
                             <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                                <i data-lucide="lock" class="w-4 h-4 text-amber-500"></i> Operational Control Board (Admin Privileges)
+                                <i data-lucide="lock" class="w-4 h-4 text-amber-400"></i> Operational Control Board (Admin Privileges)
                             </h3>
-                            <p class="text-xs text-slate-400">Realtime management interface for live vetting, queue processing, and metrics overriding.</p>
+                            <p class="text-xs text-purple-200">Realtime management interface for live vetting, queue processing, and metrics overriding.</p>
                         </div>
                         <span class="text-xs font-medium bg-red-500/20 text-red-300 px-3 py-1 rounded-full border border-red-500/30">System Console</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Live Internal Intake Queue</h4>
+                        <div class="bg-black/20 p-4 rounded-xl border border-white/10">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-purple-200 mb-3">Live Internal Intake Queue</h4>
                             <div class="space-y-2 text-xs">
-                                <div class="p-2 rounded bg-slate-700/50 flex justify-between items-center">
+                                <div class="p-2 rounded bg-white/10 flex justify-between items-center">
                                     <span>[SOS Request] Medical Assistance Needed - Zone 4</span>
                                     <span class="px-1.5 py-0.5 rounded bg-red-500 text-[10px] font-bold">URGENT</span>
                                 </div>
-                                <div class="p-2 rounded bg-slate-700/50 flex justify-between items-center">
+                                <div class="p-2 rounded bg-white/10 flex justify-between items-center">
                                     <span>[Volunteer] Sarah Jenkins (Interest: Child Welfare)</span>
                                     <span class="px-1.5 py-0.5 rounded bg-blue-500 text-[10px] font-bold">NEW</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Campaign Performance Metrics</h4>
+                        <div class="bg-black/20 p-4 rounded-xl border border-white/10">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-purple-200 mb-2">Campaign Performance Metrics</h4>
                             <div class="space-y-2 text-xs">
-                                <div class="flex justify-between"><span>Global Food Supply:</span> <span class="font-bold text-emerald-400">84% Funded</span></div>
+                                <div class="flex justify-between"><span>Global Food Supply:</span> <span class="font-bold text-[#C9A6EE]">84% Funded</span></div>
                                 <div class="flex justify-between"><span>Urgent Medical Kits:</span> <span class="font-bold text-amber-400">42% Funded</span></div>
                             </div>
                         </div>
-                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+                        <div class="bg-black/20 p-4 rounded-xl border border-white/10 flex flex-col justify-between">
                             <div>
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Global Controls</h4>
-                                <p class="text-[11px] text-slate-400">Push emergency notifications or freeze gateway protocols instantly.</p>
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-purple-200 mb-1">Global Controls</h4>
+                                <p class="text-[11px] text-purple-200">Push emergency notifications or freeze gateway protocols instantly.</p>
                             </div>
                             <button class="mt-3 w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs py-2 rounded transition">Trigger Emergency Alert Flow</button>
                         </div>
@@ -189,14 +214,14 @@
             </div>
         </section>
 
-        <!-- 2. CAUSE / CAMPAIGN SECTION (Ref: Chariti Demo 1 + Alone Home Together) -->
+        <!-- 2. CAUSE / CAMPAIGN SECTION -->
         <section id="causes" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Active Allocations</span>
-                        <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-1">Urgent Campaigns Requiring Support</h2>
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#6C30B0]">Active Allocations</span>
+                        <h2 class="text-3xl font-bold text-brand-heading tracking-tight mt-1">Urgent Campaigns Requiring Support</h2>
                     </div>
                     <p class="text-slate-500 max-w-md text-sm">
                         Select a campaign below to initialize our multi-step inline deployment pipeline. Every donation logs immediately to transparency protocols.
@@ -206,12 +231,12 @@
                 <div class="grid lg:grid-cols-12 gap-8">
                     <!-- MAIN CAMPAIGN GRID (8 Cols) -->
                     <div class="lg:col-span-8 grid sm:grid-cols-2 gap-6">
-                        <div v-for="cause in causes" :key="cause.id" class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                        <div v-for="cause in causes" :key="cause.id" class="bg-white rounded-2xl border border-purple-100 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
                             <div>
-                                <div class="relative h-48 bg-slate-100 flex items-center justify-center p-4">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent z-10"></div>
-                                    <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#0f172a_1px,transparent_1px)] [background-size:12px_12px]"></div>
-                                    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-2.5 py-1 rounded-md z-20 shadow-sm uppercase tracking-wider">
+                                <div class="relative h-48 bg-[#F1EAF7] flex items-center justify-center p-4">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-[#270D44]/70 to-transparent z-10"></div>
+                                    <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#4A1D7A_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                                    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#3D1369] text-[11px] font-bold px-2.5 py-1 rounded-md z-20 shadow-sm uppercase tracking-wider">
                                         {{ cause.category }}
                                     </span>
                                     <div class="absolute bottom-3 left-3 right-3 text-white z-20">
@@ -224,41 +249,41 @@
                                     <!-- Progress Bar -->
                                     <div class="space-y-1.5">
                                         <div class="flex justify-between text-xs font-medium text-slate-500">
-                                            <span>Raised: <strong class="text-slate-900">${{ cause.raised.toLocaleString() }}</strong></span>
+                                            <span>Raised: <strong class="text-[#2A123F]">${{ cause.raised.toLocaleString() }}</strong></span>
                                             <span>{{ Math.round((cause.raised / cause.goal) * 100) }}%</span>
                                         </div>
-                                        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-emerald-600 h-full rounded-full transition-all duration-500" :style="{ width: (cause.raised / cause.goal) * 100 + '%' }"></div>
+                                        <div class="w-full bg-[#F1EAF7] h-2 rounded-full overflow-hidden">
+                                            <div class="bg-brand-cta h-full rounded-full transition-all duration-500" :style="{ width: (cause.raised / cause.goal) * 100 + '%' }"></div>
                                         </div>
                                         <div class="text-[11px] text-slate-400 font-medium text-right">Goal: ${{ cause.goal.toLocaleString() }}</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="p-5 pt-0">
-                                <button @click="openDonationModal(cause)" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1.5">
-                                    <i data-lucide="heart" class="w-4 h-4 text-emerald-400"></i> Secure Donation
+                                <button @click="openDonationModal(cause)" class="w-full bg-brand-deep hover:opacity-90 text-white font-medium text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1.5">
+                                    <i data-lucide="heart" class="w-4 h-4 text-[#C9A6EE]"></i> Secure Donation
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <!-- WIDGET: URGENT CAUSES SIDEBAR (4 Cols) -->
-                    <div class="lg:col-span-4 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
+                    <div class="lg:col-span-4 bg-brand-soft p-6 rounded-2xl border border-purple-100 space-y-6">
                         <div>
-                            <h3 class="font-bold text-slate-900 flex items-center gap-2">
+                            <h3 class="font-bold text-[#2A123F] flex items-center gap-2">
                                 <i data-lucide="alert-circle" class="w-5 h-5 text-amber-500 animate-pulse"></i> Urgent Bottlenecks
                             </h3>
                             <p class="text-xs text-slate-500 mt-1">These fields are running critical under-funded operational lines.</p>
                         </div>
 
                         <div class="space-y-4">
-                            <div v-for="uc in urgentCauses" :key="uc.id" class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                            <div v-for="uc in urgentCauses" :key="uc.id" class="bg-white p-4 rounded-xl border border-purple-100 shadow-sm space-y-3">
                                 <div class="flex justify-between items-start gap-2">
-                                    <h4 class="font-bold text-xs text-slate-900 line-clamp-1">{{ uc.title }}</h4>
+                                    <h4 class="font-bold text-xs text-[#2A123F] line-clamp-1">{{ uc.title }}</h4>
                                     <span class="shrink-0 bg-amber-50 text-amber-700 text-[10px] font-extrabold px-1.5 py-0.5 rounded border border-amber-200">CRITICAL</span>
                                 </div>
                                 <div class="space-y-1">
-                                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                                    <div class="w-full bg-[#F1EAF7] h-1.5 rounded-full overflow-hidden">
                                         <div class="bg-amber-500 h-full" :style="{ width: (uc.raised / uc.goal) * 100 + '%' }"></div>
                                     </div>
                                     <div class="flex justify-between text-[10px] text-slate-400 font-medium">
@@ -266,15 +291,15 @@
                                         <span>Need: ${{ (uc.goal - uc.raised).toLocaleString() }}</span>
                                     </div>
                                 </div>
-                                <button @click="openDonationModal(uc)" class="w-full text-center text-xs text-emerald-600 font-bold hover:text-emerald-700 transition">
+                                <button @click="openDonationModal(uc)" class="w-full text-center text-xs text-[#6C30B0] font-bold hover:text-[#4A1D7A] transition">
                                     Intercept Gap Matrix &rarr;
                                 </button>
                             </div>
                         </div>
 
                         <!-- Mini Trust Seal inside sidebar -->
-                        <div class="pt-4 border-t border-slate-200 flex items-center gap-3 text-xs text-slate-500">
-                            <i data-lucide="shield-check" class="w-8 h-8 text-emerald-600 shrink-0"></i>
+                        <div class="pt-4 border-t border-purple-100 flex items-center gap-3 text-xs text-slate-500">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-[#6C30B0] shrink-0"></i>
                             <p>Funds are locked into legal accounts strictly escrowed for humanitarian deployment.</p>
                         </div>
                     </div>
@@ -283,40 +308,40 @@
             </div>
         </section>
 
-        <!-- 3. DONATION IMPACT TOOL (Ref: Nicdark Charity Foundation + YourHope) -->
-        <section id="impact-tool" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- 3. DONATION IMPACT TOOL -->
+        <section id="impact-tool" class="py-20 bg-brand-deep text-white relative overflow-hidden">
             <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-12">
                 <div class="space-y-3">
-                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Granular Auditing Simulator</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#C9A6EE]">Granular Auditing Simulator</span>
                     <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Interactive Impact Calculator</h2>
-                    <p class="text-slate-400 max-w-xl mx-auto text-sm">
+                    <p class="text-purple-200 max-w-xl mx-auto text-sm">
                         See exactly how micro-allocations directly support human individuals out in live operational clusters. Adjust options dynamically.
                     </p>
                 </div>
 
-                <div class="bg-slate-800/80 backdrop-blur-sm border border-slate-700 p-6 sm:p-8 rounded-3xl shadow-2xl text-left grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-8 rounded-3xl shadow-2xl text-left grid md:grid-cols-2 gap-8 items-center">
                     <!-- Config Controls -->
                     <div class="space-y-6">
                         <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-wider text-slate-400">1. Select Target Deployment Metric</label>
+                            <label class="text-xs font-bold uppercase tracking-wider text-purple-200">1. Select Target Deployment Metric</label>
                             <div class="grid grid-cols-2 gap-2">
                                 <button v-for="(metric, key) in impactConfig" :key="key" @click="selectedImpactKey = key" 
-                                    :class="selectedImpactKey === key ? 'border-emerald-500 bg-emerald-500/10 text-white' : 'border-slate-700 bg-slate-900/50 text-slate-400 hover:border-slate-600'" 
+                                    :class="selectedImpactKey === key ? 'border-[#8F54D3] bg-[#8F54D3]/15 text-white' : 'border-white/10 bg-black/20 text-purple-200 hover:border-white/20'" 
                                     class="p-3 rounded-xl border text-xs font-semibold flex items-center gap-2 transition">
-                                    <i :data-lucide="metric.icon" class="w-4 h-4 text-emerald-400"></i>
+                                    <i :data-lucide="metric.icon" class="w-4 h-4 text-[#C9A6EE]"></i>
                                     {{ metric.name }}
                                 </button>
                             </div>
                         </div>
 
                         <div class="space-y-2">
-                            <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-purple-200">
                                 <label>2. Volume of Beneficiaries</label>
-                                <span class="text-emerald-400 text-sm font-bold">{{ impactCount }} People</span>
+                                <span class="text-[#C9A6EE] text-sm font-bold">{{ impactCount }} People</span>
                             </div>
-                            <input type="range" min="1" max="50" v-model="impactCount" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
-                            <div class="flex justify-between text-[10px] text-slate-500 font-semibold">
+                            <input type="range" min="1" max="50" v-model="impactCount" class="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#8F54D3]">
+                            <div class="flex justify-between text-[10px] text-purple-300 font-semibold">
                                 <span>1 Person</span>
                                 <span>25 People</span>
                                 <span>50 People</span>
@@ -325,18 +350,18 @@
                     </div>
 
                     <!-- Output Summary -->
-                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 flex flex-col justify-between h-full space-y-6">
+                    <div class="bg-black/30 p-6 rounded-2xl border border-white/10 flex flex-col justify-between h-full space-y-6">
                         <div class="space-y-2">
-                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Recommended Total Allocation</div>
-                            <div class="text-4xl font-black text-white tracking-tight">${{ calculatedAmount }} <span class="text-sm font-normal text-slate-400">USD</span></div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-purple-200">Recommended Total Allocation</div>
+                            <div class="text-4xl font-black text-white tracking-tight">${{ calculatedAmount }} <span class="text-sm font-normal text-purple-300">USD</span></div>
                         </div>
-                        <div class="p-3 bg-slate-800 rounded-xl border border-slate-700/50 text-xs text-slate-300 leading-relaxed flex gap-2.5 items-start">
-                            <i data-lucide="info" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                        <div class="p-3 bg-white/5 rounded-xl border border-white/10 text-xs text-purple-100 leading-relaxed flex gap-2.5 items-start">
+                            <i data-lucide="info" class="w-4 h-4 text-[#C9A6EE] shrink-0 mt-0.5"></i>
                             <div>
-                                Your proposed donation of <strong class="text-white">${{ calculatedAmount }}</strong> explicitly guarantees the deployment of <strong class="text-emerald-400">{{ currentImpactConfig.name.toLowerCase() }}</strong> requirements to support exactly <strong class="text-white">{{ impactCount }}</strong> individuals.
+                                Your proposed donation of <strong class="text-white">${{ calculatedAmount }}</strong> explicitly guarantees the deployment of <strong class="text-[#C9A6EE]">{{ currentImpactConfig.name.toLowerCase() }}</strong> requirements to support exactly <strong class="text-white">{{ impactCount }}</strong> individuals.
                             </div>
                         </div>
-                        <button @click="openDonationModalWithAmount(calculatedAmount, currentImpactConfig.name)" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-3 rounded-xl transition shadow-md uppercase tracking-wider">
+                        <button @click="openDonationModalWithAmount(calculatedAmount, currentImpactConfig.name)" class="w-full bg-brand-cta hover:bg-brand-cta-hover text-white text-xs font-bold py-3 rounded-xl transition shadow-md uppercase tracking-wider">
                             Commit This Allocation
                         </button>
                     </div>
@@ -344,77 +369,77 @@
             </div>
         </section>
 
-        <!-- 4. TRANSPARENCY & TRUST SECTION (Ref: Alone + YourHope) -->
+        <!-- 4. TRANSPARENCY & TRUST SECTION -->
         <section id="transparency" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <div class="text-center max-w-xl mx-auto space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Zero Agency Extraction</span>
-                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Radical System Transparency</h2>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#6C30B0]">Zero Agency Extraction</span>
+                    <h2 class="text-3xl font-bold text-brand-heading tracking-tight">Radical System Transparency</h2>
                     <p class="text-slate-500 text-sm">We believe non-profits must prove operational metrics rather than demand blind trust.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div class="bg-brand-soft p-6 rounded-2xl border border-purple-100 flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center">
+                            <div class="w-10 h-10 bg-[#F1EAF7] text-[#6C30B0] rounded-xl flex items-center justify-center">
                                 <i data-lucide="pie-chart" class="w-5 h-5"></i>
                             </div>
-                            <h3 class="font-bold text-slate-900 text-base">95% Funding Efficiency</h3>
+                            <h3 class="font-bold text-[#2A123F] text-base">95% Funding Efficiency</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">Only 5% of inputs are allocated to basic server operations and compliance architecture. Over ninety-five cents of every dollar lands inside active program deployment blocks.</p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-slate-200">
-                            <a href="#" class="text-xs font-semibold text-emerald-600 hover:underline flex items-center gap-1">View Financial Breakdown Ledger &rarr;</a>
+                        <div class="pt-4 mt-4 border-t border-purple-100">
+                            <a href="#" class="text-xs font-semibold text-[#6C30B0] hover:underline flex items-center gap-1">View Financial Breakdown Ledger &rarr;</a>
                         </div>
                     </div>
 
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div class="bg-brand-soft p-6 rounded-2xl border border-purple-100 flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center">
+                            <div class="w-10 h-10 bg-[#F1EAF7] text-[#6C30B0] rounded-xl flex items-center justify-center">
                                 <i data-lucide="file-check" class="w-5 h-5"></i>
                             </div>
-                            <h3 class="font-bold text-slate-900 text-base">Regulatory/Compliance Audits</h3>
+                            <h3 class="font-bold text-[#2A123F] text-base">Regulatory/Compliance Audits</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">Diasa Foundation maintaining full tax-exempt filing protocols. All regulatory accounting documentation ledger streams are hosted publicly in immutable archival records.</p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-slate-200">
-                            <a href="#" class="text-xs font-semibold text-emerald-600 hover:underline flex items-center gap-1">Download Audited Financial PDFs &rarr;</a>
+                        <div class="pt-4 mt-4 border-t border-purple-100">
+                            <a href="#" class="text-xs font-semibold text-[#6C30B0] hover:underline flex items-center gap-1">Download Audited Financial PDFs &rarr;</a>
                         </div>
                     </div>
 
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div class="bg-brand-soft p-6 rounded-2xl border border-purple-100 flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center">
+                            <div class="w-10 h-10 bg-[#F1EAF7] text-[#6C30B0] rounded-xl flex items-center justify-center">
                                 <i data-lucide="activity" class="w-5 h-5"></i>
                             </div>
-                            <h3 class="font-bold text-slate-900 text-base">Verified Field Feeds</h3>
+                            <h3 class="font-bold text-[#2A123F] text-base">Verified Field Feeds</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">Ground response coordinates and logistical drop receipts update every 48 hours to confirm physical supply handoff directly inside deployment nodes.</p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-slate-200">
-                            <a href="#" class="text-xs font-semibold text-emerald-600 hover:underline flex items-center gap-1">Browse Live Activity Map &rarr;</a>
+                        <div class="pt-4 mt-4 border-t border-purple-100">
+                            <a href="#" class="text-xs font-semibold text-[#6C30B0] hover:underline flex items-center gap-1">Browse Live Activity Map &rarr;</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. BENEFICIARY STORYTELLING SECTION (Ref: Donat) -->
-        <section id="stories" class="py-20 bg-slate-50 border-t border-slate-200">
+        <!-- 7. BENEFICIARY STORYTELLING SECTION -->
+        <section id="stories" class="py-20 bg-brand-soft border-t border-purple-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <div class="text-center max-w-xl mx-auto space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Human Realities</span>
-                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Stories From the Field Nodes</h2>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#6C30B0]">Human Realities</span>
+                    <h2 class="text-3xl font-bold text-brand-heading tracking-tight">Stories From the Field Nodes</h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div v-for="story in stories" :key="story.id" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+                    <div v-for="story in stories" :key="story.id" class="bg-white p-6 rounded-2xl border border-purple-100 shadow-sm flex flex-col justify-between space-y-6">
                         <div class="flex items-start gap-4">
                             <!-- Visual Placeholder Representing the Beneficiary Context -->
-                            <div class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-200 shrink-0 flex items-center justify-center text-slate-400 relative overflow-hidden">
-                                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:6px_6px]"></div>
+                            <div class="w-16 h-16 rounded-xl bg-[#F1EAF7] border border-purple-100 shrink-0 flex items-center justify-center text-[#6C30B0] relative overflow-hidden">
+                                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#4A1D7A_1px,transparent_1px)] [background-size:6px_6px]"></div>
                                 <i data-lucide="user" class="w-6 h-6"></i>
                             </div>
                             <div class="space-y-1">
-                                <h3 class="font-bold text-base text-slate-900">{{ story.name }}</h3>
-                                <span class="text-[11px] font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded">{{ story.location }}</span>
+                                <h3 class="font-bold text-base text-[#2A123F]">{{ story.name }}</h3>
+                                <span class="text-[11px] font-medium bg-[#F1EAF7] text-[#4A1D7A] px-2 py-0.5 rounded">{{ story.location }}</span>
                             </div>
                         </div>
                         
@@ -431,17 +456,17 @@
             </div>
         </section>
 
-        <!-- 6. VOLUNTEER REGISTRATION (Ref: YourHope) -->
+        <!-- 6. VOLUNTEER REGISTRATION -->
         <section id="volunteer" class="py-20 bg-white">
             <div class="max-w-xl mx-auto px-4 sm:px-6">
-                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl space-y-6">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-purple-100 shadow-xl space-y-6">
                     <div class="text-center space-y-2">
-                        <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Join Field Logistics Operations</h2>
+                        <h2 class="text-2xl font-bold text-[#2A123F] tracking-tight">Join Field Logistics Operations</h2>
                         <p class="text-xs text-slate-500">Register as an active responder. Your information is auto-segmented by selected capability pathways.</p>
                     </div>
 
                     <!-- Volunteer Submission Feedback Alert -->
-                    <div v-if="volunteerSubmitted" class="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs space-y-1 animate-fade-in">
+                    <div v-if="volunteerSubmitted" class="p-4 bg-[#F1EAF7] border border-purple-200 text-[#3D1369] rounded-xl text-xs space-y-1 animate-fade-in">
                         <div class="font-bold flex items-center gap-1.5">
                             <i data-lucide="check-circle" class="w-4 h-4"></i> Profile Segmented Successfully
                         </div>
@@ -452,19 +477,19 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div class="space-y-1">
                                 <label class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Full Name</label>
-                                <input type="text" required class="w-full text-xs p-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-500" placeholder="Alex Chen">
+                                <input type="text" required class="w-full text-xs p-2.5 bg-[#FBF9FD] border border-purple-100 rounded-lg focus:outline-none focus:border-[#8F54D3]" placeholder="Alex Chen">
                             </div>
                             <div class="space-y-1">
                                 <label class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Email Address</label>
-                                <input type="email" required class="w-full text-xs p-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-500" placeholder="alex@domain.org">
+                                <input type="email" required class="w-full text-xs p-2.5 bg-[#FBF9FD] border border-purple-100 rounded-lg focus:outline-none focus:border-[#8F54D3]" placeholder="alex@domain.org">
                             </div>
                         </div>
 
                         <div class="space-y-2">
                             <label class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Select Sector Interest Targets (Pre-Segmentation)</label>
                             <div class="grid grid-cols-2 gap-2">
-                                <label v-for="sector in volunteerSectors" :key="sector" class="flex items-center gap-2 p-2 bg-slate-50 border border-slate-200 rounded-lg cursor-pointer text-xs select-none hover:bg-slate-100 transition">
-                                    <input type="checkbox" :value="sector" v-model="volunteerForm.selectedSectors" class="rounded text-emerald-600 focus:ring-emerald-500 w-3.5 h-3.5">
+                                <label v-for="sector in volunteerSectors" :key="sector" class="flex items-center gap-2 p-2 bg-[#FBF9FD] border border-purple-100 rounded-lg cursor-pointer text-xs select-none hover:bg-[#F1EAF7] transition">
+                                    <input type="checkbox" :value="sector" v-model="volunteerForm.selectedSectors" class="rounded text-[#6C30B0] focus:ring-[#8F54D3] w-3.5 h-3.5">
                                     <span>{{ sector }}</span>
                                 </label>
                             </div>
@@ -472,10 +497,10 @@
 
                         <div class="space-y-1">
                             <label class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Availability & Operational Notes</label>
-                            <textarea rows="2" class="w-full text-xs p-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-500" placeholder="Mention hours per week, certifications, or logistical skillsets..."></textarea>
+                            <textarea rows="2" class="w-full text-xs p-2.5 bg-[#FBF9FD] border border-purple-100 rounded-lg focus:outline-none focus:border-[#8F54D3]" placeholder="Mention hours per week, certifications, or logistical skillsets..."></textarea>
                         </div>
 
-                        <button type="submit" :disabled="volunteerForm.selectedSectors.length === 0" class="w-full bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-semibold text-xs py-3 rounded-xl transition uppercase tracking-wider shadow-sm">
+                        <button type="submit" :disabled="volunteerForm.selectedSectors.length === 0" class="w-full bg-brand-cta hover:bg-brand-cta-hover disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-semibold text-xs py-3 rounded-xl transition uppercase tracking-wider shadow-sm">
                             Submit & Onboard Candidate
                         </button>
                     </form>
@@ -486,7 +511,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 text-xs py-8">
+    <footer class="bg-brand-deep text-purple-200 border-t border-white/10 text-xs py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>&copy; 2026 Diasa Foundation. Structural Accountability Protocol. Prototype Matrix.</div>
             <div class="flex gap-6">
@@ -498,28 +523,28 @@
     </footer>
 
     <!-- 2. INLINE MULTI-STEP DONATION MODAL -->
-    <div v-if="donationModal.isOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-        <div class="bg-white rounded-3xl border border-slate-200 shadow-2xl w-full max-w-md overflow-hidden flex flex-col max-h-[90vh]">
+    <div v-if="donationModal.isOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#270D44]/60 backdrop-blur-sm animate-fade-in">
+        <div class="bg-white rounded-3xl border border-purple-100 shadow-2xl w-full max-w-md overflow-hidden flex flex-col max-h-[90vh]">
             <!-- Header -->
-            <div class="bg-slate-50 p-4 border-b border-slate-100 flex justify-between items-center shrink-0">
+            <div class="bg-[#FBF9FD] p-4 border-b border-purple-100 flex justify-between items-center shrink-0">
                 <div>
-                    <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">Secure Funding Link</span>
-                    <h3 class="font-bold text-slate-900 text-sm line-clamp-1">Backing: {{ donationModal.causeTitle }}</h3>
+                    <span class="text-[10px] font-bold text-[#6C30B0] uppercase tracking-widest">Secure Funding Link</span>
+                    <h3 class="font-bold text-[#2A123F] text-sm line-clamp-1">Backing: {{ donationModal.causeTitle }}</h3>
                 </div>
-                <button @click="closeDonationModal" class="p-1.5 hover:bg-slate-200 rounded-lg transition text-slate-400 hover:text-slate-600">
+                <button @click="closeDonationModal" class="p-1.5 hover:bg-[#F1EAF7] rounded-lg transition text-slate-400 hover:text-[#4A1D7A]">
                     <i data-lucide="x" class="w-4 h-4"></i>
                 </button>
             </div>
 
             <!-- Step Indicators -->
-            <div class="bg-slate-100 px-4 py-2 flex justify-between items-center text-[10px] font-bold text-slate-400 border-b border-slate-200/60 shrink-0">
-                <span :class="donationModal.step === 1 ? 'text-emerald-600' : 'text-slate-500'">1. Amount Tier</span>
+            <div class="bg-[#F1EAF7] px-4 py-2 flex justify-between items-center text-[10px] font-bold text-slate-400 border-b border-purple-100/60 shrink-0">
+                <span :class="donationModal.step === 1 ? 'text-[#6C30B0]' : 'text-slate-500'">1. Amount Tier</span>
                 <i data-lucide="chevron-right" class="w-3 h-3 text-slate-300"></i>
-                <span :class="donationModal.step === 2 ? 'text-emerald-600' : 'text-slate-500'">2. Payment Method</span>
+                <span :class="donationModal.step === 2 ? 'text-[#6C30B0]' : 'text-slate-500'">2. Payment Method</span>
                 <i data-lucide="chevron-right" class="w-3 h-3 text-slate-300"></i>
-                <span :class="donationModal.step === 3 ? 'text-emerald-600' : 'text-slate-500'">3. Identity Info</span>
+                <span :class="donationModal.step === 3 ? 'text-[#6C30B0]' : 'text-slate-500'">3. Identity Info</span>
                 <i data-lucide="chevron-right" class="w-3 h-3 text-slate-300"></i>
-                <span :class="donationModal.step === 4 ? 'text-emerald-600' : 'text-slate-500'">4. Terms Confirm</span>
+                <span :class="donationModal.step === 4 ? 'text-[#6C30B0]' : 'text-slate-500'">4. Terms Confirm</span>
             </div>
 
             <!-- Form Content Box -->
@@ -530,14 +555,14 @@
                     <label class="font-bold text-slate-700 block">Select Configuration Tier Matrix</label>
                     <div class="grid grid-cols-3 gap-2">
                         <button v-for="amt in [25, 50, 100]" :key="amt" @click="donationModal.form.amount = amt" 
-                            :class="donationModal.form.amount === amt ? 'bg-slate-900 text-white border-slate-900' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'"
+                            :class="donationModal.form.amount === amt ? 'bg-brand-deep text-white border-[#270D44]' : 'bg-[#FBF9FD] text-slate-700 border-purple-100 hover:bg-[#F1EAF7]'"
                             class="p-3 rounded-xl border font-bold transition">
                             ${{ amt }}
                         </button>
                     </div>
                     <div class="space-y-1">
                         <label class="text-[10px] font-bold text-slate-400 uppercase">Or Specify Custom Capital Input ($)</label>
-                        <input type="number" v-model.number="donationModal.form.amount" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-lg text-xs focus:outline-none focus:border-emerald-500 font-medium">
+                        <input type="number" v-model.number="donationModal.form.amount" class="w-full p-2.5 bg-[#FBF9FD] border border-purple-100 rounded-lg text-xs focus:outline-none focus:border-[#8F54D3] font-medium">
                     </div>
                 </div>
 
@@ -546,10 +571,10 @@
                     <label class="font-bold text-slate-700 block">Select Transaction Gateway Method</label>
                     <div class="space-y-2">
                         <label v-for="method in ['Secure Credit/Debit Card', 'Instant Bank Wire Transfer Protocol', 'Verified PayPal Ecosystem']" :key="method" 
-                            class="flex items-center justify-between p-3 bg-slate-50 border rounded-xl cursor-pointer hover:bg-slate-100 transition"
-                            :class="donationModal.form.method === method ? 'border-emerald-500 bg-emerald-50/50' : 'border-slate-200'">
+                            class="flex items-center justify-between p-3 bg-[#FBF9FD] border rounded-xl cursor-pointer hover:bg-[#F1EAF7] transition"
+                            :class="donationModal.form.method === method ? 'border-[#8F54D3] bg-[#F1EAF7]' : 'border-purple-100'">
                             <div class="flex items-center gap-2">
-                                <input type="radio" :value="method" v-model="donationModal.form.method" class="text-emerald-600 focus:ring-emerald-500">
+                                <input type="radio" :value="method" v-model="donationModal.form.method" class="text-[#6C30B0] focus:ring-[#8F54D3]">
                                 <span class="font-medium text-slate-700">{{ method }}</span>
                             </div>
                             <i data-lucide="credit-card" class="w-4 h-4 text-slate-400"></i>
@@ -563,11 +588,11 @@
                     <div class="space-y-2">
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold text-slate-400 uppercase">Legal Full Name</label>
-                            <input type="text" v-model="donationModal.form.donorName" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-500" placeholder="John Doe">
+                            <input type="text" v-model="donationModal.form.donorName" class="w-full p-2.5 bg-[#FBF9FD] border border-purple-100 rounded-lg focus:outline-none focus:border-[#8F54D3]" placeholder="John Doe">
                         </div>
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold text-slate-400 uppercase">Auditable Notification Email</label>
-                            <input type="email" v-model="donationModal.form.donorEmail" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-500" placeholder="john@example.com">
+                            <input type="email" v-model="donationModal.form.donorEmail" class="w-full p-2.5 bg-[#FBF9FD] border border-purple-100 rounded-lg focus:outline-none focus:border-[#8F54D3]" placeholder="john@example.com">
                         </div>
                     </div>
                 </div>
@@ -575,14 +600,14 @@
                 <!-- STEP 4: Terms Confirm -->
                 <div v-if="donationModal.step === 4" class="space-y-4">
                     <label class="font-bold text-slate-700 block">Review and Authorize Allocation</label>
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
-                        <div class="flex justify-between"><span>Target Cause:</span> <span class="font-bold text-slate-900">{{ donationModal.causeTitle }}</span></div>
-                        <div class="flex justify-between"><span>Total Capital:</span> <span class="font-bold text-emerald-600">${{ donationModal.form.amount }} USD</span></div>
+                    <div class="p-3 bg-[#FBF9FD] rounded-xl border border-purple-100 space-y-2">
+                        <div class="flex justify-between"><span>Target Cause:</span> <span class="font-bold text-[#2A123F]">{{ donationModal.causeTitle }}</span></div>
+                        <div class="flex justify-between"><span>Total Capital:</span> <span class="font-bold text-[#6C30B0]">${{ donationModal.form.amount }} USD</span></div>
                         <div class="flex justify-between"><span>Gateway Channel:</span> <span class="font-medium text-slate-800">{{ donationModal.form.method }}</span></div>
                         <div class="flex justify-between"><span>Registered As:</span> <span class="font-medium text-slate-800">{{ donationModal.form.donorName }}</span></div>
                     </div>
-                    <label class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200 cursor-pointer">
-                        <input type="checkbox" v-model="donationModal.form.agreedToTerms" class="mt-0.5 rounded text-emerald-600 focus:ring-emerald-500 w-3.5 h-3.5">
+                    <label class="flex items-start gap-2 bg-[#FBF9FD] p-2.5 rounded-lg border border-purple-100 cursor-pointer">
+                        <input type="checkbox" v-model="donationModal.form.agreedToTerms" class="mt-0.5 rounded text-[#6C30B0] focus:ring-[#8F54D3] w-3.5 h-3.5">
                         <span class="text-[11px] text-slate-500 leading-tight">I authorize immediate execution of this transaction and acknowledge that funds are explicitly locked under transparent compliance protocols for direct humanitarian deployment.</span>
                     </label>
                 </div>
@@ -590,48 +615,48 @@
             </div>
 
             <!-- Footer Action Buttons -->
-            <div class="bg-slate-50 p-4 border-t border-slate-100 flex justify-between gap-2 shrink-0">
-                <button v-if="donationModal.step > 1" @click="donationModal.step--" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold px-4 py-2 rounded-xl transition">
+            <div class="bg-[#FBF9FD] p-4 border-t border-purple-100 flex justify-between gap-2 shrink-0">
+                <button v-if="donationModal.step > 1" @click="donationModal.step--" class="bg-white hover:bg-[#F1EAF7] text-slate-700 border border-purple-100 font-semibold px-4 py-2 rounded-xl transition">
                     Back
                 </button>
                 <div v-else></div>
 
-                <button v-if="donationModal.step < 4" @click="donationModal.step++" :disabled="!isStepValid" class="bg-slate-900 hover:bg-slate-800 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-white font-semibold px-5 py-2 rounded-xl transition">
+                <button v-if="donationModal.step < 4" @click="donationModal.step++" :disabled="!isStepValid" class="bg-brand-deep hover:opacity-90 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-white font-semibold px-5 py-2 rounded-xl transition">
                     Continue &rarr;
                 </button>
-                <button v-else @click="executeDonation" :disabled="!donationModal.form.agreedToTerms" class="bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold px-5 py-2 rounded-xl transition uppercase tracking-wider">
+                <button v-else @click="executeDonation" :disabled="!donationModal.form.agreedToTerms" class="bg-brand-cta hover:bg-brand-cta-hover disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold px-5 py-2 rounded-xl transition uppercase tracking-wider">
                     Confirm & Execute
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- 5. GUIDED HELP & REQUEST CHATBOX (Ref: CareBridge USP) -->
+    <!-- 5. GUIDED HELP & REQUEST CHATBOX -->
     <div class="fixed bottom-4 right-4 z-50 flex flex-col items-end">
         
         <!-- Chat window layout -->
-        <div v-if="chat.isOpen" class="bg-white w-80 sm:w-96 h-[480px] rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden mb-3 transform origin-bottom-right transition-all">
+        <div v-if="chat.isOpen" class="bg-white w-80 sm:w-96 h-[480px] rounded-2xl shadow-2xl border border-purple-100 flex flex-col overflow-hidden mb-3 transform origin-bottom-right transition-all">
             <!-- Header bar -->
-            <div class="bg-emerald-600 text-white p-4 flex justify-between items-center shrink-0">
+            <div class="bg-brand-cta text-white p-4 flex justify-between items-center shrink-0">
                 <div class="flex items-center gap-2">
-                    <div class="w-2 h-2 bg-emerald-300 rounded-full animate-pulse"></div>
+                    <div class="w-2 h-2 bg-[#C9A6EE] rounded-full animate-pulse"></div>
                     <div>
                         <h3 class="font-bold text-xs">CareBridge Core Intake</h3>
-                        <p class="text-[10px] text-emerald-100">Automated triage queue routing</p>
+                        <p class="text-[10px] text-purple-100">Automated triage queue routing</p>
                     </div>
                 </div>
-                <button @click="chat.isOpen = false" class="text-emerald-200 hover:text-white transition">
+                <button @click="chat.isOpen = false" class="text-purple-100 hover:text-white transition">
                     <i data-lucide="x" class="w-4 h-4"></i>
                 </button>
             </div>
 
             <!-- Messages Log Window -->
-            <div class="flex-grow overflow-y-auto p-4 space-y-4 custom-scrollbar text-xs bg-slate-50" id="chat-logs">
+            <div class="flex-grow overflow-y-auto p-4 space-y-4 custom-scrollbar text-xs bg-[#FBF9FD]" id="chat-logs">
                 
                 <!-- Initial Core Welcome Message -->
                 <div class="flex items-start gap-2 max-w-[85%]">
-                    <div class="w-6 h-6 bg-emerald-600 text-white rounded-lg flex items-center justify-center shrink-0 text-[10px] font-bold">CB</div>
-                    <div class="bg-white border border-slate-200 p-2.5 rounded-xl shadow-sm text-slate-700 leading-relaxed">
+                    <div class="w-6 h-6 bg-brand-cta text-white rounded-lg flex items-center justify-center shrink-0 text-[10px] font-bold">CB</div>
+                    <div class="bg-white border border-purple-100 p-2.5 rounded-xl shadow-sm text-slate-700 leading-relaxed">
                         Welcome to CareBridge Intake. Select a classification path below to map structural telemetry data directly to relevant emergency response teams.
                     </div>
                 </div>
@@ -640,22 +665,22 @@
                 <div v-for="(msg, idx) in chat.history" :key="idx" class="space-y-3">
                     <!-- User Answer Badge -->
                     <div v-if="msg.type === 'user'" class="flex justify-end">
-                        <div class="bg-emerald-600 text-white p-2.5 rounded-xl shadow-sm max-w-[85%] font-medium">
+                        <div class="bg-brand-cta text-white p-2.5 rounded-xl shadow-sm max-w-[85%] font-medium">
                             {{ msg.text }}
                         </div>
                     </div>
                     <!-- Bot System Response -->
                     <div v-if="msg.type === 'bot'" class="flex items-start gap-2 max-w-[85%]">
-                        <div class="w-6 h-6 bg-emerald-600 text-white rounded-lg flex items-center justify-center shrink-0 text-[10px] font-bold">CB</div>
-                        <div class="bg-white border border-slate-200 p-2.5 rounded-xl shadow-sm text-slate-700 leading-relaxed">
+                        <div class="w-6 h-6 bg-brand-cta text-white rounded-lg flex items-center justify-center shrink-0 text-[10px] font-bold">CB</div>
+                        <div class="bg-white border border-purple-100 p-2.5 rounded-xl shadow-sm text-slate-700 leading-relaxed">
                             {{ msg.text }}
                         </div>
                     </div>
                 </div>
 
                 <!-- Live questionnaire fields input wrapper based on selected category state -->
-                <div v-if="chat.currentCategory && !chat.isCompleted" class="bg-emerald-50/70 border border-emerald-100 p-3 rounded-xl space-y-3 animate-fade-in">
-                    <div class="font-semibold text-emerald-800 text-[11px] uppercase tracking-wider">
+                <div v-if="chat.currentCategory && !chat.isCompleted" class="bg-[#F1EAF7]/70 border border-purple-100 p-3 rounded-xl space-y-3 animate-fade-in">
+                    <div class="font-semibold text-[#3D1369] text-[11px] uppercase tracking-wider">
                         Active Form Block: {{ chat.currentCategory }} Questionnaire
                     </div>
                     
@@ -664,19 +689,19 @@
                         <p class="font-medium text-xs">{{ currentChatQuestion.label }}</p>
                         
                         <!-- TEXT FIELD -->
-                        <input v-if="currentChatQuestion.type === 'text'" type="text" v-model="chat.currentInput" class="w-full text-xs p-2 bg-white border border-slate-200 rounded focus:outline-none focus:border-emerald-500" :placeholder="currentChatQuestion.placeholder">
+                        <input v-if="currentChatQuestion.type === 'text'" type="text" v-model="chat.currentInput" class="w-full text-xs p-2 bg-white border border-purple-100 rounded focus:outline-none focus:border-[#8F54D3]" :placeholder="currentChatQuestion.placeholder">
                         
                         <!-- SELECT RADIO BUTTONS -->
                         <div v-if="currentChatQuestion.type === 'select'" class="space-y-1">
                             <button v-for="opt in currentChatQuestion.options" :key="opt" @click="chat.currentInput = opt" 
-                                :class="chat.currentInput === opt ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'"
+                                :class="chat.currentInput === opt ? 'bg-brand-cta text-white border-[#6C30B0]' : 'bg-white text-slate-700 border-purple-100 hover:bg-[#F1EAF7]'"
                                 class="w-full text-left text-xs p-2 rounded border transition font-medium">
                                 {{ opt }}
                             </button>
                         </div>
                     </div>
 
-                    <button @click="advanceChatStep" :disabled="!chat.currentInput" class="w-full bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 text-white font-bold text-[11px] py-2 rounded transition uppercase tracking-wider">
+                    <button @click="advanceChatStep" :disabled="!chat.currentInput" class="w-full bg-brand-cta hover:bg-brand-cta-hover disabled:bg-slate-300 text-white font-bold text-[11px] py-2 rounded transition uppercase tracking-wider">
                         Submit Step Parameter
                     </button>
                 </div>
@@ -684,12 +709,12 @@
                 <!-- Main Menu Category Buttons (Shown when no category is selected yet) -->
                 <div v-if="!chat.currentCategory" class="space-y-1.5 pt-2">
                     <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Choose Intake Category Tunnel:</div>
-                    <button v-for="(flow, name) in chatFlows" :key="name" @click="startChatCategory(name)" class="w-full bg-white hover:bg-emerald-50 text-slate-700 border border-slate-200 hover:border-emerald-300 p-2.5 rounded-xl font-medium text-left flex items-center justify-between transition text-xs shadow-sm group">
+                    <button v-for="(flow, name) in chatFlows" :key="name" @click="startChatCategory(name)" class="w-full bg-white hover:bg-[#F1EAF7] text-slate-700 border border-purple-100 hover:border-[#8F54D3] p-2.5 rounded-xl font-medium text-left flex items-center justify-between transition text-xs shadow-sm group">
                         <span class="flex items-center gap-2">
-                            <i :data-lucide="flow.icon" class="w-4 h-4 text-emerald-600"></i>
+                            <i :data-lucide="flow.icon" class="w-4 h-4 text-[#6C30B0]"></i>
                             {{ name }}
                         </span>
-                        <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-300 group-hover:text-emerald-500 transition"></i>
+                        <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-300 group-hover:text-[#6C30B0] transition"></i>
                     </button>
                 </div>
 
@@ -697,7 +722,7 @@
         </div>
 
         <!-- Floating Action Trigger Launcher Widget Button -->
-        <button @click="chat.isOpen = !chat.isOpen" class="bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-105 group relative">
+        <button @click="chat.isOpen = !chat.isOpen" class="bg-brand-cta hover:bg-brand-cta-hover text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-105 group relative">
             <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 border-2 border-white rounded-full"></span>
             <i v-if="!chat.isOpen" data-lucide="message-square" class="w-6 h-6"></i>
             <i v-else data-lucide="chevron-down" class="w-6 h-6"></i>
@@ -712,10 +737,8 @@
 
     createApp({
         setup() {
-            // Role Management Toggle Parameter Setup ('public' / 'user' / 'admin')
             const currentRole = ref('public');
 
-            // 1. Hero Dynamic Impact Carousel Properties
             const currentStatIndex = ref(0);
             const impactStats = [
                 { id: 1, label: "12.4K Lives Touched", value: "12,419", icon: "users", desc: "Unique verified humans supplied with immediate disaster mitigation relief assets across active grids.", category: "Human Impact" },
@@ -723,13 +746,11 @@
                 { id: 3, label: "48H Audit Sprints", value: "Every 48H", icon: "clock", desc: "Field coordination feeds updated to verify regional cluster drop handoffs live.", category: "Response Rate" }
             ];
 
-            // Interval execution pipeline simulation looping heroes metrics metrics
             setInterval(() => {
                 currentStatIndex.value = (currentStatIndex.value + 1) % impactStats.length;
                 nextTick(() => lucide.createIcons());
             }, 6000);
 
-            // 2. Causes Data Structure
             const causes = ref([
                 { id: 1, category: "Medical Support", title: "Emergency Trauma & Surgical Medical Kits", desc: "Sourcing advanced triage equipment and operational field hospital supplies for high-impact zones facing structural healthcare failure.", raised: 42100, goal: 100000 },
                 { id: 2, category: "Nutritional Supply", title: "Regional Decentralized Food Supply Pipelines", desc: "Financing direct localized community bulk grain acquisitions and macro shipping channels to bypass broken logistics hubs.", raised: 84900, goal: 98000 }
@@ -740,7 +761,6 @@
                 { id: 4, category: "Sanitation Systems", title: "Clean Water Well Infrastructure Kits", raised: 3100, goal: 22000 }
             ]);
 
-            // Multi-step Donation Modal State Logic
             const donationModal = ref({
                 isOpen: false,
                 step: 1,
@@ -761,7 +781,7 @@
                 donationModal.value.causeId = 99;
                 donationModal.value.causeTitle = `General Core Allocation: ${categoryName}`;
                 donationModal.value.form.amount = amount;
-                donationModal.value.step = 2; // Jump directly to payment layer since amount is initialized from calculator
+                donationModal.value.step = 2;
                 donationModal.value.isOpen = true;
                 nextTick(() => lucide.createIcons());
             };
@@ -780,7 +800,6 @@
             const executeDonation = () => {
                 alert(`Transaction Successfully Processed!\n\nThank you ${donationModal.value.form.donorName}. $${donationModal.value.form.amount} has been securely authorized and queued into our direct ledger mapping pipeline.`);
                 
-                // Emulate updates live inside state UI for prototype interactivity response loops
                 const foundMain = causes.value.find(c => c.id === donationModal.value.causeId);
                 if (foundMain) foundMain.raised += donationModal.value.form.amount;
                 const foundUrgent = urgentCauses.value.find(c => c.id === donationModal.value.causeId);
@@ -789,7 +808,6 @@
                 closeDonationModal();
             };
 
-            // 3. Donation Impact Simulation Logic Engine
             const selectedImpactKey = ref('medical');
             const impactCount = ref(5);
             const impactConfig = {
@@ -802,7 +820,6 @@
             const currentImpactConfig = computed(() => impactConfig[selectedImpactKey.value]);
             const calculatedAmount = computed(() => currentImpactConfig.value.unitCost * impactCount.value);
 
-            // 5. CareBridge Guided Help Chatbox Flow Matrix Definition
             const chat = ref({
                 isOpen: false,
                 currentCategory: null,
@@ -812,7 +829,6 @@
                 isCompleted: false
             });
 
-            // 3 fully working distinct category mapping trees built out to meet explicit user validation parameters
             const chatFlows = {
                 "SOS Emergency Request": {
                     icon: "alert-triangle",
@@ -870,7 +886,6 @@
                     chat.value.currentStepIdx++;
                     chat.value.history.push({ type: 'bot', text: currentFlow.questions[chat.value.currentStepIdx].label });
                 } else {
-                    // Complete terminal logic node mapping
                     chat.value.isCompleted = true;
                     const finalSystemSummary = currentFlow.onComplete(answersSoFar);
                     chat.value.history.push({ type: 'bot', text: finalSystemSummary });
@@ -887,7 +902,6 @@
                 if (el) el.scrollTop = el.scrollHeight;
             };
 
-            // 6. Volunteer Structural Setup Form Configuration
             const volunteerSectors = ["Food Distribution", "Women Empowerment", "Child Welfare", "Environmental Initiatives", "Medical Response Support"];
             const volunteerSubmitted = ref(false);
             const volunteerForm = ref({ selectedSectors: [] });
@@ -896,18 +910,15 @@
                 volunteerSubmitted.value = true;
             };
 
-            // 7. Field Narrative Base Databank (Donat Reference Framing Line)
             const stories = [
                 { id: 1, name: "The Al-Jamil Family Collective", location: "Northern Valley Field Node B", narrative: "With access routes severed after environmental shifts, local distribution chains completely gridlocked. Diasa logistics teams successfully deployed micro-shuttle packages bypassing regional hubs to drop life-saving thermal filtration sets directly.", contrast: "Without this tracking matrix deployment, the family faced un-monitored sanitation vectors with no actionable support requests logging on standard official registries for months." },
                 { id: 2, name: "Rahal Community Hub Infrastructure", location: "District 9 Urban Network", narrative: "Severe structural disruptions closed standard clinic locations overnight. Our medical allocation grid bypass funded independent mobile trauma vans equipped to handle local preventative triage protocols directly inside neighborhood coordinates.", contrast: "Before this intervention, acute local medical complications required a hazardous 40-mile migration across un-vetted sectors without any assurance of supply inventory upon arrival." }
             ];
 
-            // Re-trigger Lucide icon compiler hooks when dynamic states update inside DOM trees
             watch([currentRole, selectedImpactKey, () => chat.value.isOpen, () => chat.value.currentCategory], () => {
                 nextTick(() => lucide.createIcons());
             });
 
-            // Run initial execution instantiation block
             nextTick(() => lucide.createIcons());
 
             return {
